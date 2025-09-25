@@ -1,4 +1,4 @@
-import './connectform.scss'
+import './connectform.css'
 import { useEffect , useState } from "react";
 import useChngtext from "../../../hooks/UseChngtext";
 import i18n from "../../../Helper/i18n";

@@ -1,4 +1,4 @@
-import "./SideBashnav.scss";
+import "./SideBashnav.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import UseAuth from "../../../hooks/AuthContext";
 import useChngtext from "../../../hooks/UseChngtext";

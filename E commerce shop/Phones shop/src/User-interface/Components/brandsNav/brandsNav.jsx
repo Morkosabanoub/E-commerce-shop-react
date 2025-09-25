@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import useBrands from "../../../hooks/useBrands";
-import "./brandsNav.scss";
+import "./brandsNav.css";
 import useChngtext from "../../../hooks/UseChngtext";
 
 export default function BrandsNav() {

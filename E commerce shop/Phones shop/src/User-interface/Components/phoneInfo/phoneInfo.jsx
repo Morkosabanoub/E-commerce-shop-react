@@ -1,5 +1,5 @@
 import useSlider from "../../../hooks/useSlider.jsx";
-import "./phoneInfo.scss";
+import "./phoneInfo.css";
 import useChngtext from "../../../hooks/UseChngtext.jsx";
 import useData from "../../../hooks/useData.jsx";
 import UseAuth from "../../../hooks/AuthContext.jsx";

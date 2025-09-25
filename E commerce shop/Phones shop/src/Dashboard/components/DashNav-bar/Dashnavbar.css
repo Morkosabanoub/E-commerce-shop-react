@@ -32,7 +32,6 @@
   cursor: pointer;
 }
 
-
 .dashlang {
   position: relative;
   display: flex;
@@ -41,8 +40,6 @@
   order: 3;
   margin: 0px 5px;
   border-radius: 5px;
-
-
 }
 
 .dashcurrentlang {
@@ -52,7 +49,6 @@
   padding: 1px 1px;
   border-radius: 5px;
   background: #fff;
-
 }
 
 .dashdroplang span,
@@ -83,18 +79,18 @@
   background: transparent;
   cursor: pointer;
 }
-@media(max-width: 768px){
-  .Dashnavbar{
+
+@media (max-width: 768px) {
+  .Dashnavbar {
     width: 90%;
     left: 10%;
     right: 0%;
   }
-    .dashnavsearch{
-      width: 70%;
-    }
-  .dashsearch-icon{
-      left: 80%;
-      right: 80%;
-    }
-
-}
+  .dashnavsearch {
+    width: 70%;
+  }
+  .dashsearch-icon {
+    left: 80%;
+    right: 80%;
+  }
+}/*# sourceMappingURL=Dashnavbar.css.map */

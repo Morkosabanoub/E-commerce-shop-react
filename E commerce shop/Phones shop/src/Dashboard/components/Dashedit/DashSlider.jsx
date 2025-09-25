@@ -3,7 +3,7 @@ import Reflang from "../../../Helper/Reflang";
 import useData from "../../../hooks/useData";
 import useChngtext from "../../../hooks/UseChngtext";
 import { FaSearch } from "react-icons/fa";
-import './Dashedit.scss'
+import './Dashedit.css'
 
 export default function Slider() {
   const { lang } = Reflang();

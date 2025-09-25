@@ -2,7 +2,7 @@
 import useData from "../../../hooks/useData";
 import useChngtext from "../../../hooks/UseChngtext";
 import UseAuth from "../../../hooks/AuthContext";
-import "./Dashedit.scss";
+import "./Dashedit.css";
 import { useEffect, useState } from "react";
 
 export default function Profile() {

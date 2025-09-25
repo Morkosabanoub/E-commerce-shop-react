@@ -1,7 +1,7 @@
 import useService from "../../../hooks/useService";
 import useChngtext from "../../../hooks/UseChngtext";
 import Service from "./Service-card";
-import "./Service-card.scss";
+import "./Service-card.css";
 
 export default function Services() {
   const { text } = useChngtext();

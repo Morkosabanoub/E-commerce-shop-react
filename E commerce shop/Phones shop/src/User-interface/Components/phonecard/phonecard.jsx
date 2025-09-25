@@ -1,4 +1,4 @@
-import "./phonecard.scss";
+import "./phonecard.css";
 import { Link } from "react-router-dom";
 import { generateSlug } from "../../../Helper/helpers.jsx";
 import useChngtext from "../../../hooks/UseChngtext";

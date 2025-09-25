@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./Login-Signup.scss";
+import "./Login-Signup.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import UseAuth from "../../../hooks/AuthContext";

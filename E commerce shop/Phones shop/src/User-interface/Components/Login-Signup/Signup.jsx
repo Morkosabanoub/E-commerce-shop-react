@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import useChngtext from "../../../hooks/UseChngtext";
 import { useNavigate } from "react-router-dom";
-import "./Login-Signup.scss";
+import "./Login-Signup.css";
 export default function Signup() {
   const { text } = useChngtext();
   const navigate = useNavigate();

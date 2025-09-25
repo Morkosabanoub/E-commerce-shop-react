@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import "./footer.scss";
+import "./footer.css";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { BsFillTelephoneFill } from "react-icons/bs";

@@ -1,6 +1,6 @@
 import usePhone from "../../../hooks/usePhone";
 import PhoneCard from "../phonecard/phonecard";
-import "./bestofferslider.scss";
+import "./bestofferslider.css";
 import useSlider from "../../../hooks/useSlider";
 import {
   IoArrowForwardCircleOutline,

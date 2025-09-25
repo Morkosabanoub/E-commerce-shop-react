@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import useData from "../../../hooks/useData";
 import Reflang from "../../../Helper/Reflang";
 import useChngtext from "../../../hooks/UseChngtext";
-import "./Dashedit.scss";
+import "./Dashedit.css";
 import { FaSearch } from "react-icons/fa";
 
 export default function Brands() {

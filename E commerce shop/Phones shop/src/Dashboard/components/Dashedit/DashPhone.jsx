@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import useChngtext from "../../../hooks/UseChngtext";
 import PhoneCard from "../../../User-interface/Components/phonecard/phonecard";
-import "./Dashedit.scss";
+import "./Dashedit.css";
 
 export default function DashPhone() {
   const { lang } = Reflang();

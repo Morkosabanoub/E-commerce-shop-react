@@ -3,7 +3,7 @@ import Reflang from "../../../Helper/Reflang";
 import { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import useChngtext from "../../../hooks/UseChngtext";
-import "./Dashedit.scss";
+import "./Dashedit.css";
 
 export default function Services() {
   const { lang } = Reflang();
