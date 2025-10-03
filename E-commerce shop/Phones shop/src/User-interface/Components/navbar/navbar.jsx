@@ -1,6 +1,6 @@
 // Navbar.jsx
 import { useState } from "react";
-import "./navbar.css";
+import "./navbar.scss";
 import useBrands from "../../../hooks/useBrands.jsx";
 import i18n from "../../../Helper/i18n.jsx";
 import { NavLink, Link } from "react-router-dom";
@@ -30,10 +30,11 @@ export default function Navbar() {
   const [currentLang, setCurrentLang] = useState(i18n.language || "en");
   const { search, handleSearch, setSearch, searchfound } = Usesearch("");
 
-
+  const [openLang, setOpenLang] = useState(false);
   const changeLang = (lang) => {
     i18n.changeLanguage(lang);
     setCurrentLang(lang);
+    setOpenLang(false);
   };
   const endpoint = `http://localhost:5000/api/general/users`;
   const { dataList } = useData(endpoint);
@@ -41,7 +42,6 @@ export default function Navbar() {
     { to: "/Phones", text: text.phones },
     { to: "/BestOffer", text: text.bestOffer },
     { to: "/connectus", text: text.connectus },
-    
 
   ];
   return (
@@ -68,7 +68,7 @@ export default function Navbar() {
                   text: brand.name,
                 })),
               },
-              ...navbar, // Phones, BestOffer, Connectus
+              ...navbar,
             ].map((link, index) =>
               link.dropdown ? (
                 <div key={index} className="dropnav">
@@ -143,24 +143,25 @@ export default function Navbar() {
 
       <div className="usernav">
         <div className="lang">
-          <span className="currentlang">
+          <span className="currentlang" onClick={() => setOpenLang(!openLang)}>
             <span
-              className={`fi fi-${
-                currentLang === "ar" ? "eg" : currentLang === "ua" ? "ua" : "sh"
-              }`}
+              className={`fi fi-${currentLang === "ar" ? "eg" : currentLang === "ua" ? "ua" : "sh"
+                }`}
             ></span>
           </span>
-          <div className="droplang">
-            <button type="submit" onClick={() => changeLang("en")}>
-              <span className="fi fi-sh"></span>
-            </button>
-            <button type="submit" onClick={() => changeLang("ar")}>
-              <span className="fi fi-eg"></span>
-            </button>
-            <button type="submit" onClick={() => changeLang("ua")}>
-              <span className="fi fi-ua"></span>
-            </button>
-          </div>
+          {openLang && (
+            <div className="droplang">
+              <button type="submit" onClick={() => changeLang("en")}>
+                <span className="fi fi-sh"></span>
+              </button>
+              <button type="submit" onClick={() => changeLang("ar")}>
+                <span className="fi fi-eg"></span>
+              </button>
+              <button type="submit" onClick={() => changeLang("ua")}>
+                <span className="fi fi-ua"></span>
+              </button>
+            </div>
+          )}
         </div>
         {user && (
           <div className="cart-like">
@@ -169,7 +170,7 @@ export default function Navbar() {
               <span className="cart-count">
                 {user && dataList.length > 0
                   ? dataList.find((u) => u.Username === user.Username)?.cart
-                      ?.length || 0
+                    ?.length || 0
                   : 0}
               </span>
             </Link>
@@ -178,7 +179,7 @@ export default function Navbar() {
               <span className="like-count">
                 {user && dataList.length > 0
                   ? dataList.find((u) => u.Username === user.Username)?.liked
-                      ?.length || 0
+                    ?.length || 0
                   : 0}
               </span>
             </Link>
