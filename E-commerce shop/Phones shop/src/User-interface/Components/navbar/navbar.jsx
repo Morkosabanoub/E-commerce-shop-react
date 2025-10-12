@@ -1,6 +1,6 @@
 // Navbar.jsx
 import { useState } from "react";
-import "./navbar.scss";
+import "./navbar.css";
 import useBrands from "../../../hooks/useBrands.jsx";
 import i18n from "../../../Helper/i18n.jsx";
 import { NavLink, Link } from "react-router-dom";
