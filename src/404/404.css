@@ -1,0 +1,23 @@
+.PageNotFound {
+  width: 98%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.PageNotFound-img {
+  order: 1;
+  width: 50%;
+}
+
+.PageNotFound-text {
+  width: 50%;
+  align-items: center;
+}
+
+.PageNotFound-text h1 {
+  width: 100%;
+  font-size: 80px;
+  color: var(--color-link);
+  white-space: wrap;
+}/*# sourceMappingURL=404.css.map */
