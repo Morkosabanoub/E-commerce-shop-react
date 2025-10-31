@@ -1,28 +1,12 @@
-# E-Commerce Shop (React)
+# React + Vite
 
-A modern and responsive e-commerce shop built with **HTML**, **SASS**, **JavaScript**, and **React**.  
-This project demonstrates front-end development best practices, including:
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-- **Reusable Components**: Organized React components for scalability.
-- **Responsive UI**: Mobile-first design with SASS for clean styling.
-- **State Management**: Context API used for managing app-wide state.
-- **Modern Workflow**: Clear project structure for collaboration.
+Currently, two official plugins are available:
 
-## 🚀 Features
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- Product listing with modern card layout.
-- Responsive navigation and user-friendly design.
-- Clean and maintainable SCSS structure.
-- Easy to extend with new components and routes.
+## Expanding the ESLint configuration
 
-## 🛠️ Tech Stack
-
-- **React**
-- **JavaScript (ES6+)**
-- **HTML5**
-- **SASS (SCSS)**
-
-## 📦 Installation
-
-npm run dev
-node server.js
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
