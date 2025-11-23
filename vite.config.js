@@ -10,6 +10,5 @@ export default defineConfig({
     },
   },
   logLevel: "silent",
-  base: "/Phones-shop/",
-
+  base: "/E-commerce-shop-react/",
 });
