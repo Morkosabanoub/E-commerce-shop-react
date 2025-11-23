@@ -11,7 +11,9 @@ export default function useService() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:5000/api/translations/${lang}/services`)
+    fetch(
+      `https://phones-shop-sever.onrender.com/api/translations/${lang}/services`
+    )
       .then((res) => {
         if (!res.ok) {
           throw new Error(`${text.error}`);

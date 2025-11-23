@@ -1,4 +1,4 @@
-import "./Service-card.css";
+import "./Service-card.scss";
 
 export default function ServiceCard({ Service }) {
   if (!Service) return null;

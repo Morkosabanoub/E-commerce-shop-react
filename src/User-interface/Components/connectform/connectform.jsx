@@ -1,4 +1,4 @@
-import './connectform.css'
+import './connectform.scss'
 import { useEffect , useState } from "react";
 import useChngtext from "../../../hooks/UseChngtext";
 import i18n from "../../../Helper/i18n";
@@ -12,7 +12,9 @@ export default function ConnectForm() {
     const lang = i18n.language;
     const [company, setCompany] = useState(null);
   useEffect(() => {
-      fetch(`http://localhost:5000/api/translations/${lang}/company`)
+      fetch(
+        `https://phones-shop-sever.onrender.com/api/translations/${lang}/company`
+      )
         .then((res) => res.json())
         .then((data) => {
           setCompany(data);

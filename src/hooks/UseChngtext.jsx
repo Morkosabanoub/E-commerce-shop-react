@@ -11,7 +11,9 @@ export default function useChngtext() {
       setText(JSON.parse(cached));
     }
 
-    fetch(`http://localhost:5000/api/translations/${lang}/text`)
+    fetch(
+      `https://phones-shop-sever.onrender.com/api/translations/${lang}/text`
+    )
       .then((res) => res.json())
       .then((data) => {
         setText(data);

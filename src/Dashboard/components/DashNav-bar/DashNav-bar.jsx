@@ -1,4 +1,4 @@
-import "./Dashnavbar.css";
+import "./Dashnavbar.scss";
 import i18n from "../../../Helper/i18n";
 import { useState } from "react";
 import Usesearch from "../../../hooks/usesearch";

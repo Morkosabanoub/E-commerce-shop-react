@@ -1,4 +1,4 @@
-import "./phonecard.css";
+import "./phonecard.scss";
 import { Link } from "react-router-dom";
 import { generateSlug } from "../../../Helper/helpers.jsx";
 import useChngtext from "../../../hooks/UseChngtext";
@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 
 export default function PhoneCard({ phoneCard }) {
   const { text } = useChngtext();
-  const endpoint = `http://localhost:5000/api/general/users`;
+  const endpoint = `https://phones-shop-sever.onrender.com/api/general/users`;
   const { dataList, loading, updatebyname } = useData(endpoint);
   const finalPrice = phoneCard.price - phoneCard.discount;
   const discountPercent = Math.round(

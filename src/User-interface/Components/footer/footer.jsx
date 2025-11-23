@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import "./footer.css";
+import "./footer.scss";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { BsFillTelephoneFill } from "react-icons/bs";
@@ -16,7 +16,9 @@ export default function Footer() {
   const lang = i18n.language;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/translations/${lang}/company`)
+    fetch(
+      `https://phones-shop-sever.onrender.com/api/translations/${lang}/company`
+    )
       .then((res) => res.json())
       .then((data) => {
         setCompany(data);

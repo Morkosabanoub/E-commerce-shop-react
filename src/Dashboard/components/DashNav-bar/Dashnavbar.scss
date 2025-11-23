@@ -2,12 +2,11 @@
   position: fixed;
   display: flex;
   top: 1%;
-  left: 16%;
-  right: 16%;
+  left: 17%;
+  right: 17%;
   width: 83%;
   height: 50px;
   background-color: var(--color-bg);
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
   border-radius: var(--border-radius);
   text-transform: capitalize;
   z-index: 999;
@@ -31,6 +30,7 @@
   animation: spin 2s linear infinite;
   cursor: pointer;
 }
+
 
 .dashlang {
   position: relative;
@@ -79,18 +79,18 @@
   background: transparent;
   cursor: pointer;
 }
-
-@media (max-width: 768px) {
-  .Dashnavbar {
+@media(max-width: 768px){
+  .Dashnavbar{
     width: 90%;
     left: 10%;
     right: 0%;
   }
-  .dashnavsearch {
-    width: 70%;
-  }
-  .dashsearch-icon {
-    left: 80%;
-    right: 80%;
-  }
-}/*# sourceMappingURL=Dashnavbar.css.map */
+    .dashnavsearch{
+      width: 70%;
+    }
+  .dashsearch-icon{
+      left: 80%;
+      right: 80%;
+    }
+
+}

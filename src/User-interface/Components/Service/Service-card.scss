@@ -12,12 +12,11 @@
   touch-action: manipulation;
   cursor: pointer;
 }
-
 .service-card:hover,
 .service-card:focus,
 .service-card:active {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-10px); 
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
 .service-card i,
@@ -29,13 +28,11 @@
   color: var(--color-link);
   margin: 10px auto;
 }
-
 .service-card h3 {
   font-size: 20px;
   font-weight: bold;
 }
-
 .service-card p {
   height: 50%;
   font-size: 15px;
-}/*# sourceMappingURL=Service-card.css.map */
+}

@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import useData from "../../../hooks/useData";
 import Reflang from "../../../Helper/Reflang";
 import useChngtext from "../../../hooks/UseChngtext";
-import "./Dashedit.css";
+import "./Dashedit.scss";
 import { FaSearch } from "react-icons/fa";
 
 export default function Brands() {
   const { lang } = Reflang();
-  const endpoint = `http://localhost:5000/api/translations/${lang}/brands`;
+  const endpoint = `https://phones-shop-sever.onrender.com/api/translations/${lang}/brands`;
   const { text } = useChngtext();
   const { dataList, loading, status, add, update, remove } = useData(endpoint);
   const [search, setSearch] = useState("");

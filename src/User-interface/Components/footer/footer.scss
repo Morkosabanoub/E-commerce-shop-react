@@ -8,6 +8,7 @@
   white-space: normal;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  
 }
 
 .footer-col {
@@ -15,24 +16,22 @@
   width: 100%;
   margin: 10px 0px;
 }
-
 .footer-logo {
   width: 24%;
   height: 100%;
   margin: 0.5%;
 }
-
 .footer-logo img {
   width: 100%;
   margin: 25% 0%;
 }
-
 .footer-about {
   width: 49%;
   display: flex;
   flex-direction: column;
   text-align: center;
   margin: 0.5%;
+
 }
 
 .footer h4 {
@@ -57,7 +56,6 @@
   margin: 0.5%;
   text-align: center;
 }
-
 .pho-adres-ema {
   width: 100%;
   height: 80%;
@@ -92,30 +90,27 @@
 .phoadres a:hover {
   color: var(--color-secondary-hover);
 }
-
 .icon {
   font-size: 30px;
   margin-right: 5px;
 }
-
 .footer-links {
   width: 24%;
   margin: 0.5%;
+  
 }
-
 .links-foot {
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
   gap: 5px;
+  
 }
-
 .links-foot a {
-  text-decoration: none;
-  font-size: 20px;
+    text-decoration: none;
+    font-size: 20px;
 }
-
 .rights {
   display: block;
   width: 100%;
@@ -129,7 +124,6 @@
   .footer-info {
     flex-direction: column;
     width: 100%;
-    height: -moz-fit-content;
     height: fit-content;
     margin-bottom: 10px;
   }
@@ -151,7 +145,8 @@
   .footer-links {
     width: 100%;
   }
+
   .rights {
     width: 100%;
   }
-}/*# sourceMappingURL=footer.css.map */
+}

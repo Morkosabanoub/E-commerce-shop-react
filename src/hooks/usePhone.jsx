@@ -8,7 +8,9 @@ export default function UsePhone() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:5000/api/translations/${lang}/phones`)
+    fetch(
+      `https://phones-shop-sever.onrender.com/api/translations/${lang}/phones`
+    )
       .then((res) => res.json())
       .then((data) => {
         setPhones(data);

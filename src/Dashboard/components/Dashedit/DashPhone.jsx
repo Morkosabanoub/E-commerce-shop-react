@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import useChngtext from "../../../hooks/UseChngtext";
 import PhoneCard from "../../../User-interface/Components/phonecard/phonecard";
-import "./Dashedit.css";
+import "./Dashedit.scss";
 
 export default function DashPhone() {
   const { lang } = Reflang();
-  const endpoint = `http://localhost:5000/api/translations/${lang}/phones`;
+  const endpoint = `https://phones-shop-sever.onrender.com/api/translations/${lang}/phones`;
   const { dataList, loading, status, add, update, remove } = useData(endpoint);
   const { text } = useChngtext();
   const [search, setSearch] = useState("");

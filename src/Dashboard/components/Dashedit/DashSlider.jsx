@@ -3,12 +3,12 @@ import Reflang from "../../../Helper/Reflang";
 import useData from "../../../hooks/useData";
 import useChngtext from "../../../hooks/UseChngtext";
 import { FaSearch } from "react-icons/fa";
-import './Dashedit.css'
+import './Dashedit.scss'
 
 export default function Slider() {
   const { lang } = Reflang();
   const { text } = useChngtext();
-  const endpoint = `http://localhost:5000/api/translations/${lang}/slider`;
+  const endpoint = `https://phones-shop-sever.onrender.com/api/translations/${lang}/slider`;
   const { dataList, loading, status, add, update, remove } = useData(endpoint);
   const [search, setSearch] = useState("");
   const [foundSlider, setFoundSlider] = useState(null);
