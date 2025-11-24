@@ -1,4 +1,4 @@
-import "./phonecard.scss";
+import "./phonecard.css";
 import usePhone from "../../../hooks/usePhone";
 import Phonecard from "./phonecard";
 import useLoadMore from "../../../hooks/useLoadMore";

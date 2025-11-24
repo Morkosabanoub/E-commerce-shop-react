@@ -22,7 +22,7 @@ import PageNotFound from "../404/404";
 export default function routes() {
   const { user } = UseAuth();
 
-  if (user && user.role === "admin") {
+  if (user) {
     return [
       {
         path: "/",
@@ -50,26 +50,6 @@ export default function routes() {
           { path: "Services", element: <DashServices /> },
           { path: "Profile", element: <DashProfile /> },
           { path: "*", element: <PageNotFound /> },
-        ],
-      },
-    ];
-  } else if (user && user.role === "user") {
-    return [
-      {
-        path: "/",
-        element: <Landingpage />,
-        children: [
-          { index: true, element: <Home /> },
-          { path: "brand/:brandName", element: <BrandPage /> },
-          { path: "BestOffer", element: <Bestofferpage /> },
-          { path: "Phones", element: <Phonespage /> },
-          { path: "Phone/:name", element: <PhoneInfopage /> },
-          { path: "connectus", element: <ConnectUs /> },
-          { path: "Login", element: <Login /> },
-          { path: "Signup", element: <Signup /> },
-          { path: "*", element: <PageNotFound /> },
-          { path: "Like", element: <Like /> },
-          { path: "Cart", element: <Cart /> },
         ],
       },
     ];

@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function Usesearch() {
   const { lang } = Reflang();
-  const endpoint = `https://phones-shop-sever.onrender.com/api/translations/${lang}/phones`;
+  const endpoint = `http://localhost:5000/api/translations/${lang}/phones`;
   const { dataList, loading } = useData(endpoint);
 
   const [search, setSearch] = useState("");

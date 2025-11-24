@@ -6,9 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     hmr: {
-      overlay: false,
+      overlay: false, 
     },
   },
-  logLevel: "silent",
-  base: "/E-commerce-shop-react/",
+  logLevel: "silent", 
 });

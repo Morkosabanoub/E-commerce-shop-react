@@ -1,4 +1,4 @@
-import "./SideBashnav.scss";
+import "./SideBashnav.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import UseAuth from "../../../hooks/AuthContext";
 import useChngtext from "../../../hooks/UseChngtext";
@@ -37,7 +37,7 @@ export default function SideDashnan() {
         <TiThMenu className="mobile-menu-icon" />
       </div>
 
-      <div className={`dashnav ${openNavbar ? "show-nav" : ""}`}>
+      <div className={`dashnave ${openNavbar ? "show-nav" : ""}`}>
         <h1>{text.dashbord}</h1>
         <img src={"https://i.pravatar.cc/40"} alt="avatar" />
 

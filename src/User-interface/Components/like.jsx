@@ -6,7 +6,7 @@ import UseAuth from "../../hooks/AuthContext";
 
 export default function Liked() {
   const { phones, loading } = usePhone();
-  const endpoint = `https://phones-shop-sever.onrender.com/api/general/users`;
+  const endpoint = `http://localhost:5000/api/general/users`;
   const { text } = useChngtext();
   const { dataList } = useData(endpoint);
   const { user } = UseAuth();

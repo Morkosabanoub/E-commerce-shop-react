@@ -4,7 +4,6 @@
   box-sizing: border-box;
   font-family: "Inconsolata", monospace;
   text-transform: capitalize;
-  scrollbar-width: thin;
 }
 
 @font-face {

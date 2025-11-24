@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import img404 from '../assets/images/404.jpg'
 import useChngtext from "../hooks/UseChngtext";
-import './404.scss'
+import './404.css'
 
 export default function PageNotFound() {
       const { text } = useChngtext();

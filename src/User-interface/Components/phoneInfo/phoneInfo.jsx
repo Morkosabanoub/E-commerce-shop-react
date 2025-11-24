@@ -1,5 +1,5 @@
 import useSlider from "../../../hooks/useSlider.jsx";
-import "./phoneInfo.scss";
+import "./phoneInfo.css";
 import useChngtext from "../../../hooks/UseChngtext.jsx";
 import useData from "../../../hooks/useData.jsx";
 import UseAuth from "../../../hooks/AuthContext.jsx";
@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 export default function PhoneInfo({ phoneInfo }) {
   const { text } = useChngtext();
   const { currentIndex, goTo } = useSlider(phoneInfo.images, 1, 0);
-  const endpoint = `https://phones-shop-sever.onrender.com/api/general/users`;
+  const endpoint = `http://localhost:5000/api/general/users`;
   const { dataList, status, updatebyname } = useData(endpoint);
   const { user } = UseAuth();
 

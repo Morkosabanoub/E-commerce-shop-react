@@ -1,6 +1,6 @@
 import usePhoFilter from "../../../hooks/usePhoFilter";
 import PhoneCard from "../phonecard/phonecard";
-import "./brands.scss";
+import "./brands.css";
 import useBrands from "../../../hooks/useBrands";
 import useLoadMore from "../../../hooks/useLoadMore";
 import useChngtext from "../../../hooks/UseChngtext";

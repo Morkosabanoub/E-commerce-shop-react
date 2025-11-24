@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import useChngtext from "../../../hooks/UseChngtext";
 import { useNavigate } from "react-router-dom";
-import "./Login-Signup.scss";
+import "./Login-Signup.css";
 export default function Signup() {
   const { text } = useChngtext();
   const navigate = useNavigate();
@@ -66,14 +66,11 @@ export default function Signup() {
     }
 
     try {
-      const res = await fetch(
-        `https://phones-shop-sever.onrender.com/api/general/users`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        }
-      );
+      const res = await fetch(`http://localhost:5000/api/general/users`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
       const data = await res.json();
 
@@ -134,7 +131,6 @@ export default function Signup() {
           placeholder={text.password}
           value={formData.password}
           onChange={handleChange}
-          autoComplete="current-password"
         />
         <small>
           {" "}
@@ -146,7 +142,6 @@ export default function Signup() {
           placeholder={text.repeatPassword}
           value={repeatPassword}
           onChange={handleChange}
-          autoComplete="current-password"
         />
         <label>
           <input type="checkbox" required />{" "}

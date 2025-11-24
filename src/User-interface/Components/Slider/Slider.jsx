@@ -15,9 +15,7 @@ export default function Slider() {
   const lang = i18n.language;
 
   useEffect(() => {
-    fetch(
-      `https://phones-shop-sever.onrender.com/api/translations/${lang}/slider`
-    )
+    fetch(`http://localhost:5000/api/translations/${lang}/slider`)
       .then((res) => res.json())
       .then((data) => setslider(data))
       .catch((err) => console.log(err));
@@ -33,15 +31,11 @@ export default function Slider() {
     handleTouchEnd,
   } = useSlider(slider.length, 1, true, 8000);
 
-if (!Array.isArray(slider) || slider.length === 0) {
-  return <div>{text.Loading}</div>;
-}
+  if (slider.length === 0) {
+    return <div>{text.Loading}</div>;
+  }
 
-const currentslider = slider[currentIndex] || {
-  title: "",
-  subtitle: "",
-  image: "",
-};
+  const currentslider = slider[currentIndex];
 
   return (
     <div
@@ -67,14 +61,13 @@ const currentslider = slider[currentIndex] || {
         <IoArrowBackCircleOutline />
       </button>
       <div className="sliderdots">
-        {Array.isArray(slider) &&
-          slider.map((_, index) => (
-            <span
-              key={index}
-              className={`dot ${index === currentIndex ? "active" : ""}`}
-              onClick={() => goTo(index)}
-            ></span>
-          ))}
+        {slider.map((_, index) => (
+          <span
+            key={index}
+            className={`dot ${index === currentIndex ? "active" : ""}`}
+            onClick={() => goTo(index)}
+          ></span>
+        ))}
       </div>
     </div>
   );

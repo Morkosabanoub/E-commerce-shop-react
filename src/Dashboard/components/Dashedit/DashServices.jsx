@@ -3,11 +3,11 @@ import Reflang from "../../../Helper/Reflang";
 import { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import useChngtext from "../../../hooks/UseChngtext";
-import "./Dashedit.scss";
+import "./Dashedit.css";
 
 export default function Services() {
   const { lang } = Reflang();
-  const endpoint = `https://phones-shop-sever.onrender.com/api/translations/${lang}/services`;
+  const endpoint = `http://localhost:5000/api/translations/${lang}/services`;
   const { dataList, loading, status, add, update, remove } = useData(endpoint);
   const { text } = useChngtext();
   const [search, setSearch] = useState("");

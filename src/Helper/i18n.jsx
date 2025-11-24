@@ -15,8 +15,7 @@ i18n
     load: "languageOnly",
     interpolation: { escapeValue: false },
     backend: {
-      loadPath:
-        "https://phones-shop-sever.onrender.com/api/translations/{{lng}}/text",
+      loadPath: "http://localhost:5000/api/translations/{{lng}}",
     },
     react: { useSuspense: true },
   });

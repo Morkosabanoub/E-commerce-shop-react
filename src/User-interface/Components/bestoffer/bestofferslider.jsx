@@ -1,6 +1,6 @@
 import usePhone from "../../../hooks/usePhone";
 import PhoneCard from "../phonecard/phonecard";
-import "./bestofferslider.scss";
+import "./bestofferslider.css";
 import useSlider from "../../../hooks/useSlider";
 import {
   IoArrowForwardCircleOutline,
@@ -45,8 +45,7 @@ export default function Bestofferslider() {
       className="bestofferslider"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-    >
+      onTouchEnd={handleTouchEnd}>
       <h1>{text.bestOffer}</h1>
       <div>
         {Sliderslice.length === 0 ? (
@@ -69,8 +68,7 @@ export default function Bestofferslider() {
       </button>
       <button
         className="button-web"
-        onClick={() => (window.location.href = `Phones-shop/#/BestOffer`)}
-      >
+        onClick={() => (window.location.href = `/BestOffer`)}>
         {text.exploremoreoffers}
       </button>
     </div>

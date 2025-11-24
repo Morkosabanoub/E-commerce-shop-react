@@ -6,19 +6,12 @@ export default function useBrands() {
   const { lang } = Reflang();
 
   useEffect(() => {
-    fetch(
-      `https://phones-shop-sever.onrender.com/api/translations/${lang}/brands`
-    )
+    fetch(`http://localhost:5000/api/translations/${lang}/brands`)
       .then((res) => res.json())
       .then((data) => {
-        if (Array.isArray(data)) {
-          setBrands(data);
-        } else {
-          console.warn("Brands API did not return an array:", data);
-          setBrands([]); // بدل أي قيمة غير مصفوفة بمصفوفة فارغة
-        }
+        setBrands(data);
       })
-      .catch((err) => console.error("Failed to fetch brands:", err));
+      .catch((err) => console.log(err));
   }, [lang]);
 
   return { brands };

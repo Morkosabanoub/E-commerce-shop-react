@@ -2,15 +2,15 @@ import express from "express";
 import cors from "cors";
 import { MongoClient } from "mongodb";
 import bcrypt from "bcrypt";
-import path from "path";
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = 5000;
 
 app.use(cors());
 app.use(express.json());
 
-const uri = process.env.MONGO_URI;
+const uri =
+  "mongodb+srv://Morkosabanoub:689IsVMms3e6V0dK@cluster0.yh0mmvo.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri);
 
 let translationsCollection;
@@ -26,15 +26,6 @@ async function startServer() {
     console.error("MongoDB connection failed:", err);
   }
 }
-
-const __dirname = path.resolve();
-
-// Serve React build files
-app.use(express.static(path.join(__dirname, "build")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-});
 
 startServer();
 
