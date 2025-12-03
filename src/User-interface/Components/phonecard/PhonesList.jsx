@@ -5,11 +5,13 @@ import useLoadMore from "../../../hooks/useLoadMore";
 import useChngtext from "../../../hooks/UseChngtext";
 
 export default function PhonesList() {
-  const { text } = useChngtext();
+  const { text , loadingtext } = useChngtext();
   const { phones, loading } = usePhone();
   const { visibleItems, loadMore, keepload } = useLoadMore(phones || [], 10);
 
   if (loading || !phones) return <div>{text.Loading}</div>;
+    if (loadingtext) return <p>{text.loading}</p>;
+
   return (
     <div>
       <div className="grid">

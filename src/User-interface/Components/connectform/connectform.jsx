@@ -8,11 +8,13 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdAttachEmail, MdLocationPin } from "react-icons/md";
 
 export default function ConnectForm() {
-  const { text } = useChngtext();
+  const { text , loadingtext } = useChngtext();
     const lang = i18n.language;
     const [company, setCompany] = useState(null);
   useEffect(() => {
-      fetch(`http://localhost:5000/api/translations/${lang}/company`)
+      fetch(
+        `https://phones-shop-sever.onrender.com/api/translations/${lang}/company`
+      )
         .then((res) => res.json())
         .then((data) => {
           setCompany(data);
@@ -44,7 +46,9 @@ export default function ConnectForm() {
      setMessage("");
      setErrors({});
    };
-    if (!company) return <div>"Run ( node server.js )"</div>;
+  if (!company) return <div>"<p>{text.loading}</p></div>;
+  if (loadingtext) return <p>{text.loading}</p>;
+
   return (
     <>
       <h1>{text.conectus}</h1>
@@ -72,21 +76,21 @@ export default function ConnectForm() {
 
           <div className="conectus-social">
             <a
-              href={company.social.facebook}
+              href={company.facebook}
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaFacebookF />
             </a>
             <a
-              href={company.social.instagram}
+              href={company.instagram}
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaInstagram />
             </a>
             <a
-              href={company.social.twitter}
+              href={company.twitter}
               target="_blank"
               rel="noopener noreferrer"
             >

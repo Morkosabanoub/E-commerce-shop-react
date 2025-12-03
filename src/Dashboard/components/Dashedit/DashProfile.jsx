@@ -6,8 +6,8 @@ import "./Dashedit.css";
 import { useEffect, useState } from "react";
 
 export default function Profile() {
-  const { text } = useChngtext();
-  const endpoint = "http://localhost:5000/api/general/users";
+  const { text , loadingtext} = useChngtext();
+  const endpoint = "https://phones-shop-sever.onrender.com/api/general/users";
   const { dataList, loading, status, updatebyname, remove } = useData(endpoint);
   const { user } = UseAuth();
   const [founduser, setFoundUser] = useState({
@@ -42,6 +42,7 @@ export default function Profile() {
   }, [user, dataList]);
 
   if (loading) return <div>{text.loading}</div>;
+  if (loadingtext) return <p>{text.loading}</p>;
 
   return (
     <div className="dashchang">
@@ -109,6 +110,7 @@ export default function Profile() {
             value={founduser?.password}
             onChange={(e) =>
               setFoundUser({ ...founduser, password: e.target.value })
+              
             }
           />
         </label>

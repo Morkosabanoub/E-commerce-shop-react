@@ -24,7 +24,7 @@ export default function Navbar() {
     setUser(null);
     localStorage.removeItem("authData");
   };
-  const { text } = useChngtext();
+  const { text, loadingtext } = useChngtext();
   const closeNav = () => setopenNavbar(false);
   const { brands } = useBrands();
   const [currentLang, setCurrentLang] = useState(i18n.language || "en");
@@ -36,7 +36,7 @@ export default function Navbar() {
     setCurrentLang(lang);
     setOpenLang(false);
   };
-  const endpoint = `http://localhost:5000/api/general/users`;
+  const endpoint = `https://phones-shop-sever.onrender.com/api/general/users`;
   const { dataList } = useData(endpoint);
   const navbar = [
     { to: "/Phones", text: text.phones },
@@ -44,11 +44,15 @@ export default function Navbar() {
     { to: "/connectus", text: text.connectus },
 
   ];
+    if (loadingtext) return <p>{text.loading}</p>;
+
   return (
     <div className="main-content">
-      <div className="nav">
+      <div className="navsection">
         <div className="logo">
-          <img src={logo} alt="logo" />
+          <a href="/Phones-shop">
+            <img src={logo} alt="logo" />
+          </a>
         </div>
         <div className="navbar">
           <div
@@ -63,10 +67,12 @@ export default function Navbar() {
               { to: "/", text: text.home },
               {
                 text: text.brands,
-                dropdown: brands.map((brand) => ({
-                  to: `/brand/${brand.name}`,
-                  text: brand.name,
-                })),
+                dropdown: Array.isArray(brands)
+                  ? brands.map((brand) => ({
+                      to: `/brand/${brand.name}`,
+                      text: brand.name,
+                    }))
+                  : [],
               },
               ...navbar,
             ].map((link, index) =>
@@ -119,10 +125,10 @@ export default function Navbar() {
             />
             <FaSearch onClick={handleSearch} className="search-icon" />
             <div className={"search-results"}>
-              {search && (
+              {search && Array.isArray(searchfound) && (
                 <ul>
                   {searchfound.map((b) => (
-                    <li key={b.id} o>
+                    <li key={b.id}>
                       <Link
                         to={`/phone/${generateSlug(b.name)}`}
                         onClick={() => {
@@ -145,8 +151,9 @@ export default function Navbar() {
         <div className="lang">
           <span className="currentlang" onClick={() => setOpenLang(!openLang)}>
             <span
-              className={`fi fi-${currentLang === "ar" ? "eg" : currentLang === "ua" ? "ua" : "sh"
-                }`}
+              className={`fi fi-${
+                currentLang === "ar" ? "eg" : currentLang === "ua" ? "ua" : "sh"
+              }`}
             ></span>
           </span>
           {openLang && (
@@ -169,8 +176,12 @@ export default function Navbar() {
               <IoCart className="cart-icon" />
               <span className="cart-count">
                 {user && dataList.length > 0
-                  ? dataList.find((u) => u.Username === user.Username)?.cart
-                    ?.length || 0
+                  ? Array.isArray(
+                      dataList.find((u) => u.Username === user.Username)?.cart
+                    )
+                    ? dataList.find((u) => u.Username === user.Username)?.cart
+                        .length
+                    : 0
                   : 0}
               </span>
             </Link>
@@ -178,15 +189,19 @@ export default function Navbar() {
               <FaHeart className="like-icon" />
               <span className="like-count">
                 {user && dataList.length > 0
-                  ? dataList.find((u) => u.Username === user.Username)?.liked
-                    ?.length || 0
+                  ? Array.isArray(
+                      dataList.find((u) => u.Username === user.Username)?.liked
+                    )
+                    ? dataList.find((u) => u.Username === user.Username)?.liked
+                        .length
+                    : 0
                   : 0}
               </span>
             </Link>
           </div>
         )}
         <div className="nav-left">
-          {user ? (
+          {user && user.role === "admin" ? (
             <div className="user-info">
               <img
                 src={user.avatar || "https://i.pravatar.cc/40"}
@@ -195,6 +210,14 @@ export default function Navbar() {
               <Link className="link" to="/Dashboard">
                 {text.dashboard}
               </Link>
+              <button onClick={logout}>{text.logout}</button>
+            </div>
+          ) : user ? (
+            <div className="user-info">
+              <img
+                src={user.avatar || "https://i.pravatar.cc/40"}
+                alt="avatar"
+              />
               <button onClick={logout}>{text.logout}</button>
             </div>
           ) : (

@@ -4,7 +4,7 @@ import { initReactI18next } from "react-i18next";
 import HttpBackend from "i18next-http-backend";
 
 const savedLang =
-  localStorage.getItem("lang") || navigator.language.split("-")[0] || "en";
+  localStorage.getItem("lang") || "en";
 
 i18n
   .use(HttpBackend)
@@ -15,7 +15,8 @@ i18n
     load: "languageOnly",
     interpolation: { escapeValue: false },
     backend: {
-      loadPath: "http://localhost:5000/api/translations/{{lng}}",
+      loadPath:
+        "https://phones-shop-sever.onrender.com/api/translations/{{lng}}/text",
     },
     react: { useSuspense: true },
   });

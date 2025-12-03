@@ -5,9 +5,9 @@ export default function ServiceCard({ Service }) {
 
   return (
     <div className="service-card">
-      <i className={Service.icon || ""}></i>
-      <h3>{Service.title || ""}</h3>
-      <p>{Service.text || ""}</p>
+      <i className={Service.icon}></i>
+      <h3>{Service.title }</h3>
+      <p>{Service.text}</p>
     </div>
   );
 }

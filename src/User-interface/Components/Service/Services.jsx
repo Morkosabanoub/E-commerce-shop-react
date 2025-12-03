@@ -4,20 +4,22 @@ import Service from "./Service-card";
 import "./Service-card.css";
 
 export default function Services() {
-  const { text } = useChngtext();
+  const { text, loadingtext } = useChngtext();
   const { services, error, loading } = useService();
   if (loading) return <div>{text.Loading}</div>;
+  if (loadingtext) return <p>{text.loading}</p>;
   if (error) return <div>{error}</div>;
 
   return (
     <div>
       <h1>{text.ourservice}</h1>
       <div className="grid">
-        {services.map((serviceshow) => (
-          <div key={serviceshow.id}>
-            <Service Service={serviceshow} />
-          </div>
-        ))}
+        {Array.isArray(services) &&
+          services.map((serviceshow) => (
+            <div key={serviceshow.id}>
+              <Service Service={serviceshow} />
+            </div>
+          ))}
       </div>
     </div>
   );

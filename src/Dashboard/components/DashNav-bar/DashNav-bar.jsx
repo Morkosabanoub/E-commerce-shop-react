@@ -18,7 +18,9 @@ export default function DashNavBar() {
 
   const { search, handleSearch, setSearch, searchfound } = Usesearch("");
 
-  const { text } = useChngtext();
+  const { text, loadingtext } = useChngtext();
+
+  if (loadingtext) return <p>{text.loading}</p>;
 
   return (
     <div className="Dashnavbar">

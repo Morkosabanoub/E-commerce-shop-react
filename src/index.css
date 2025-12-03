@@ -3,7 +3,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Inconsolata", monospace;
-  text-transform: capitalize;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
 }
 
 @font-face {
@@ -82,16 +83,17 @@ h1 {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18%, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   width: 98%;
-  gap: 20px;
+  gap: 10px;
   margin: 2px auto;
+  height: fit-content;
 }
 
 @media (max-width: 768px) {
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
     margin: 2px auto;
   }
 }

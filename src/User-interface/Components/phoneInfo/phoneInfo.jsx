@@ -6,9 +6,9 @@ import UseAuth from "../../../hooks/AuthContext.jsx";
 import { useEffect, useState } from "react";
 
 export default function PhoneInfo({ phoneInfo }) {
-  const { text } = useChngtext();
+  const { text , loadingtext } = useChngtext();
   const { currentIndex, goTo } = useSlider(phoneInfo.images, 1, 0);
-  const endpoint = `http://localhost:5000/api/general/users`;
+  const endpoint = `https://phones-shop-sever.onrender.com/api/general/users`;
   const { dataList, status, updatebyname } = useData(endpoint);
   const { user } = UseAuth();
 
@@ -37,6 +37,8 @@ export default function PhoneInfo({ phoneInfo }) {
   }, [user, dataList]);
 
   if (!phoneInfo) return <div>{text.nophones}</div>;
+    if (loadingtext) return <p>{text.loading}</p>;
+
 
   const finalPrice =
     phoneInfo.discount > 0

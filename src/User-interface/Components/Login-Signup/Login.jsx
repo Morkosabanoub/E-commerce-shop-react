@@ -22,14 +22,17 @@ export default function Login() {
 
   const handeluser = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/general/signin`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: email.trim(),
-          password: password.trim(),
-        }),
-      });
+      const res = await fetch(
+        `https://phones-shop-sever.onrender.com/api/general/signin`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: email.trim(),
+            password: password.trim(),
+          }),
+        }
+      );
 
       const data = await res.json();
 
@@ -42,6 +45,7 @@ export default function Login() {
           token,
           expiry,
           Username: data.user.Username || "",
+          role: data.user.role,
         };
 
         const encrypted = CryptoJS.AES.encrypt(
@@ -65,6 +69,8 @@ export default function Login() {
   return (
     <div className="Login">
       <h1>{text.login}</h1>
+      <p>{text.loginnote1}</p>
+      <p>{text.loginnote2}</p>
       <p>{message}</p>
 
       <form>
@@ -79,6 +85,7 @@ export default function Login() {
           value={password}
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
+          autoComplete="current-password"
         />
         <button type="button" className="button-web" onClick={handeluser}>
           {text.login}

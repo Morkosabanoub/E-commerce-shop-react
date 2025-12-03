@@ -8,9 +8,9 @@ import "./Dashedit.css";
 
 export default function DashPhone() {
   const { lang } = Reflang();
-  const endpoint = `http://localhost:5000/api/translations/${lang}/phones`;
+  const endpoint = `https://phones-shop-sever.onrender.com/api/translations/${lang}/phones`;
   const { dataList, loading, status, add, update, remove } = useData(endpoint);
-  const { text } = useChngtext();
+  const { text , loadingtext} = useChngtext();
   const [search, setSearch] = useState("");
   const [phonefound, setPhonefound] = useState(null);
   const [info, SetInfo] = useState(text.addphone);
@@ -20,6 +20,8 @@ export default function DashPhone() {
   }, [text.addphone]);
 
   if (loading) return <h2>{text.Loading}</h2>;
+  if (loadingtext) return <p>{text.loading}</p>;
+
 
   const handelserch = () => {
     const phone = dataList.find(

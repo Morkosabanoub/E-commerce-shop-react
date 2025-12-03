@@ -8,7 +8,7 @@ import { TiThMenu } from "react-icons/ti";
 import { useState } from "react";
 
 export default function SideDashnan() {
-  const { text } = useChngtext();
+  const { text , loadingtext } = useChngtext();
   const { logout } = UseAuth();
   const navigate = useNavigate();
   const [openNavbar, setopenNavbar] = useState(false);
@@ -27,6 +27,7 @@ export default function SideDashnan() {
     { to: "/Dashboard/Phone", icon: "fa-solid fa-box", text: text.phone },
     { to: "/Dashboard/Services", icon: "fa-solid fa-box", text: text.services },
   ];
+    if (loadingtext) return <p>{text.loading}</p>;
 
   return (
     <div>
@@ -37,11 +38,11 @@ export default function SideDashnan() {
         <TiThMenu className="mobile-menu-icon" />
       </div>
 
-      <div className={`dashnave ${openNavbar ? "show-nav" : ""}`}>
+      <div className={`dashnav ${openNavbar ? "show-nav" : ""}`}>
         <h1>{text.dashbord}</h1>
         <img src={"https://i.pravatar.cc/40"} alt="avatar" />
 
-        <div className="dashnavelinks">
+        <div className="dashnavlinks">
           {navbar.map((b, index) => (
             <NavLink key={index} to={b.to} onClick={closeNav}>
               <i className={b.icon} />

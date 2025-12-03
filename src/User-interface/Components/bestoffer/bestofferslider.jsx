@@ -9,7 +9,7 @@ import {
 import UseChngtext from "../../../hooks/UseChngtext";
 
 export default function Bestofferslider() {
-  const { text } = UseChngtext();
+  const { text, loadingtext } = UseChngtext();
 
   const { phones, loading } = usePhone(0);
 
@@ -25,7 +25,7 @@ export default function Bestofferslider() {
     handleTouchStart,
     handleTouchMove,
     handleTouchEnd,
-  } = useSlider(maxSlider.length, 5, true, 10000, {
+  } = useSlider(maxSlider.length, 5, true, 20000, {
     mobile: 2,
     tablet: 3,
     desktop: 5,
@@ -37,6 +37,8 @@ export default function Bestofferslider() {
   );
 
   if (loading) return <div>{text.Loading}</div>;
+    if (loadingtext) return <p>{text.loading}</p>;
+
   if (!phones || phones.length === 0)
     return <div>{text.Nooffersavailable}</div>;
 
@@ -45,7 +47,8 @@ export default function Bestofferslider() {
       className="bestofferslider"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}>
+      onTouchEnd={handleTouchEnd}
+    >
       <h1>{text.bestOffer}</h1>
       <div>
         {Sliderslice.length === 0 ? (
@@ -68,7 +71,8 @@ export default function Bestofferslider() {
       </button>
       <button
         className="button-web"
-        onClick={() => (window.location.href = `/BestOffer`)}>
+        onClick={() => (window.location.href = `#/BestOffer`)}
+      >
         {text.exploremoreoffers}
       </button>
     </div>

@@ -10,13 +10,16 @@ import useChngtext from "../../../hooks/UseChngtext";
 // import logo from "../../../assets/images/logo.png";
 
 export default function Footer() {
-  const { text } = useChngtext();
+  const { text, loadingtext } = useChngtext();
 
   const [company, setCompany] = useState(null);
   const lang = i18n.language;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/translations/${lang}/company`)
+    
+    fetch(
+      `https://phones-shop-sever.onrender.com/api/translations/${lang}/company`
+    )
       .then((res) => res.json())
       .then((data) => {
         setCompany(data);
@@ -24,7 +27,9 @@ export default function Footer() {
       .catch((err) => console.log(err));
   }, [lang]);
 
-  if (!company) return <div>"Run ( node server.js )"</div>;
+  if (!company) return <div><p>{text.loading}</p></div>;
+  if (loadingtext) return <p>{text.loading}</p>;
+
 
   return (
     <div className="footer">
@@ -59,19 +64,19 @@ export default function Footer() {
 
           <div className="social">
             <a
-              href={company.social.facebook}
+              href={company.facebook}
               target="_blank"
               rel="noopener noreferrer">
               <FaFacebookF />
             </a>
             <a
-              href={company.social.instagram}
+              href={company.instagram}
               target="_blank"
               rel="noopener noreferrer">
               <FaInstagram />
             </a>
             <a
-              href={company.social.twitter}
+              href={company.twitter}
               target="_blank"
               rel="noopener noreferrer">
               <FaSquareXTwitter />

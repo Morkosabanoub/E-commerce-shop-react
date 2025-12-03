@@ -1,8 +1,26 @@
 .bestofferslider {
-  height: 650px;
+  height: fit-content;
   position: relative;
   width: 96%;
   margin: 0 auto;
-  overflow-y: auto;
-  overflow-x: hidden;
-}/*# sourceMappingURL=bestofferslider.css.map */
+}
+
+.grid-bestoffer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  width: 96%;
+}
+
+@media screen and (max-width: 768px) {
+  .grid-bestoffer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 0 auto;
+    width: 96%;
+  }
+}

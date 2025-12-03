@@ -6,12 +6,18 @@ import useLoadMore from "../../../hooks/useLoadMore";
 import useChngtext from "../../../hooks/UseChngtext";
 
 export default function Brands({ brandId }) {
-  const { text } = useChngtext();
+  const { text , loadingtext } = useChngtext();
   const { brands } = useBrands();
   const { filterPhones } = usePhoFilter({ brandId });
   const { visibleItems, loadMore, keepload } = useLoadMore(filterPhones, 10);
 
   if (!brands) return <div>Loading brand...</div>;
+
+  if (!filterPhones) return <div>Loading phones...</div>;
+
+  if (loadingtext) return <p>{text.loading}</p>;
+
+  
 
   const filterbrandname = brands.filter((brand) => brand.id === brandId);
 

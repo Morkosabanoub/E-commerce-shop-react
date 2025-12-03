@@ -7,8 +7,8 @@ import { FaSearch } from "react-icons/fa";
 
 export default function Brands() {
   const { lang } = Reflang();
-  const endpoint = `http://localhost:5000/api/translations/${lang}/brands`;
-  const { text } = useChngtext();
+  const endpoint = `https://phones-shop-sever.onrender.com/api/translations/${lang}/brands`;
+  const { text , loadingtext} = useChngtext();
   const { dataList, loading, status, add, update, remove } = useData(endpoint);
   const [search, setSearch] = useState("");
   const [brandFound, setBrandFound] = useState(null);
@@ -18,6 +18,7 @@ export default function Brands() {
   const [info, setInfo] = useState(text.addbrand);
 
   if (loading) return <p>{text.Loading}</p>;
+  if (loadingtext) return <p>{text.loading}</p>;
   const handleSearch = () => {
     const brand = dataList.find(
       (b) =>

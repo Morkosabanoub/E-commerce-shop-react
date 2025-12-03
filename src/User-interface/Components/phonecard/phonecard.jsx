@@ -9,8 +9,8 @@ import UseAuth from "../../../hooks/AuthContext.jsx";
 import { useEffect, useState } from "react";
 
 export default function PhoneCard({ phoneCard }) {
-  const { text } = useChngtext();
-  const endpoint = `http://localhost:5000/api/general/users`;
+  const { text , loadingtext } = useChngtext();
+  const endpoint = `https://phones-shop-sever.onrender.com/api/general/users`;
   const { dataList, loading, updatebyname } = useData(endpoint);
   const finalPrice = phoneCard.price - phoneCard.discount;
   const discountPercent = Math.round(
@@ -42,7 +42,9 @@ export default function PhoneCard({ phoneCard }) {
     }
   }, [user, dataList]);
 
-  if (loading) return <p>loading</p>;
+  if (loading) return <p>{text.loading}</p>;
+    if (loadingtext) return <p>{text.loading}</p>;
+
 
   const handleAddToCart = () => {
     const exists = founduser.cart?.some((item) => item.id === phoneCard.id);

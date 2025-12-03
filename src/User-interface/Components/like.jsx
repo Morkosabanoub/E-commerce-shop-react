@@ -6,8 +6,8 @@ import UseAuth from "../../hooks/AuthContext";
 
 export default function Liked() {
   const { phones, loading } = usePhone();
-  const endpoint = `http://localhost:5000/api/general/users`;
-  const { text } = useChngtext();
+  const endpoint = `https://phones-shop-sever.onrender.com/api/general/users`;
+  const { text , loadingtext } = useChngtext();
   const { dataList } = useData(endpoint);
   const { user } = UseAuth();
 
@@ -30,6 +30,8 @@ export default function Liked() {
 console.log("Liked data:", foubduser?.liked);
 
   if (loading) return <div>{text.loading}</div>;
+  if (loadingtext) return <p>{text.loading}</p>;
+
 
   return (
     <div>

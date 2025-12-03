@@ -1,13 +1,14 @@
-.dashnave {
+.dashnav {
   position: fixed;
-  top: 1%;
+  top: 0;
   bottom: 1%;
   left: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 15%;
-  height: 98.5vh;
+  height: 100vh;
   overflow: hidden;
   padding-bottom: 20px;
   background-color: var(--color-bg);
@@ -15,10 +16,11 @@
   border-radius: 0px 20px 20px 0px;
   text-transform: capitalize;
   transition: left 0.3s ease;
+  transition: right 0.3s ease;
   z-index: 999;
 }
 
-.dashnave h1 {
+.dashnav h1 {
   width: 96%;
   margin: 0 auto;
   font-size: 25px;
@@ -26,7 +28,7 @@
   color: var(--color-primary);
 }
 
-.dashnave img {
+.dashnav img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -37,14 +39,14 @@
   display: none;
 }
 
-.dashnavelinks {
+.dashnavlinks {
   display: flex;
   flex-direction: column;
   width: 90%;
   margin-right: 4%;
 }
 
-.dashnavelinks a {
+.dashnavlinks a {
   width: 96%;
   height: 33px;
   display: block;
@@ -63,14 +65,13 @@
   overflow: hidden;
 }
 
-.dashnavelinks span {
+.dashnavlinks span {
   margin-left: 10px;
 }
 
-.dashnavelinks a.active {
-  color: #fff;
-  background: var(--color-primary, #1976d2);
-  clip-path: polygon(0 0, 70% 0, 100% 50%, 70% 100%, 0 100%);
+.dashnavlinks a.active {
+  background-color: #fff;
+  color: var(--color-primary, #1976d2);
 }
 
 .navbutoons {
@@ -101,25 +102,33 @@
 }
 
 @media (max-width: 768px) {
-  .dashnave {
+  .dashnav {
     width: 70%;
     left: -100%;
+    right: -100%;
   }
-  .dashnave.show-nav {
+  .dashnav.show-nav {
     left: 0;
+    right: 0;
   }
   .dashopenNavbar {
-    display: block;
+    display: flex;
     font-size: 40px;
     color: var(--color-primary);
     cursor: pointer;
     position: fixed;
-    top: -1px;
-    left: 0;
+    top: 1%;
+    left: 1%;
+    right: 1%;
     z-index: 1000;
+    width: 9%;
+    height: 50px;
+    background-color: var(--color-bg);
+    border-radius: 0px;
+    
   }
-  .dashnavelinks a {
-    width: 70%;
+  .dashnavlinks a {
+    width: 90%;
     margin: 10px auto;
   }
-}/*# sourceMappingURL=SideBashnav.css.map */
+}

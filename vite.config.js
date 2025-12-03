@@ -6,8 +6,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     hmr: {
-      overlay: false, 
+      overlay: false,
     },
   },
-  logLevel: "silent", 
+  logLevel: "silent",
+  base: "/Phones-shop/",
+
 });

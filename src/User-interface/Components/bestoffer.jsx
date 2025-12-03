@@ -5,7 +5,7 @@ import useChngtext from "../../hooks/UseChngtext";
 
 export default function Bestoffer() {
   const { phones, loading } = usePhone();
-  const { text } = useChngtext();
+  const { text , loadingtext } = useChngtext();
 
   const bestOffers = Array.isArray(phones)
     ? [...phones].sort((a, b) => b.discount - a.discount)
@@ -16,6 +16,8 @@ export default function Bestoffer() {
   if (!phones) return <div>{text.Nophonesfound}</div>;
 
   if (phones.length === 0) return <div>{text.nophones}</div>;
+    if (loadingtext) return <p>{text.loading}</p>;
+
 
   return (
     <>

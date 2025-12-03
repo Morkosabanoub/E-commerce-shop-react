@@ -7,9 +7,9 @@ import "./Dashedit.css";
 
 export default function Services() {
   const { lang } = Reflang();
-  const endpoint = `http://localhost:5000/api/translations/${lang}/services`;
+  const endpoint = `https://phones-shop-sever.onrender.com/api/translations/${lang}/services`;
   const { dataList, loading, status, add, update, remove } = useData(endpoint);
-  const { text } = useChngtext();
+  const { text , loadingtext} = useChngtext();
   const [search, setSearch] = useState("");
   const [servicefound, setServicefound] = useState(null);
 
@@ -19,6 +19,7 @@ export default function Services() {
   const [info, SetInfo] = useState(text.addservice);
 
   if (loading) return <h2>{text.Loading}</h2>;
+  if (loadingtext) return <p>{text.loading}</p>;
   const handelserch = () => {
     const service = dataList.find(
       (b) =>

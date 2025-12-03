@@ -7,8 +7,8 @@ import './Dashedit.css'
 
 export default function Slider() {
   const { lang } = Reflang();
-  const { text } = useChngtext();
-  const endpoint = `http://localhost:5000/api/translations/${lang}/slider`;
+  const { text , loadingtext } = useChngtext();
+  const endpoint = `https://phones-shop-sever.onrender.com/api/translations/${lang}/slider`;
   const { dataList, loading, status, add, update, remove } = useData(endpoint);
   const [search, setSearch] = useState("");
   const [foundSlider, setFoundSlider] = useState(null);
@@ -18,6 +18,8 @@ export default function Slider() {
   const [info, SetInfo] = useState(text.addslider);
 
   if (loading) return <div>{text.loading}</div>;
+    if (loadingtext) return <p>{text.loading}</p>;
+
   const handleSearch = () => {
     const slider = dataList.find(
       (b) =>

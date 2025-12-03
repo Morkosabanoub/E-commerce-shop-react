@@ -2,12 +2,11 @@
   position: fixed;
   display: flex;
   top: 1%;
-  left: 16%;
-  right: 16%;
+  left: 17%;
+  right: 17%;
   width: 83%;
   height: 50px;
   background-color: var(--color-bg);
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
   border-radius: var(--border-radius);
   text-transform: capitalize;
   z-index: 999;
@@ -84,7 +83,9 @@
   .Dashnavbar {
     width: 90%;
     left: 10%;
-    right: 0%;
+    right: 10%;
+    border-radius: 0px;
+    
   }
   .dashnavsearch {
     width: 70%;
