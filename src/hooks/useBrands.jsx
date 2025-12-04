@@ -8,7 +8,7 @@ export default function useBrands() {
 
   useEffect(() => {
     fetch(
-      `https://phones-shop-sever.onrender.com/api/translations/${lang}/brands`
+      `https://phones-shop.onrender.com/api/translations/${lang}/brands`
     )
       .then((res) => res.json())
       .then((data) => {

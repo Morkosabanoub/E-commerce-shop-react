@@ -25,7 +25,7 @@ export default function Bestofferslider() {
     handleTouchStart,
     handleTouchMove,
     handleTouchEnd,
-  } = useSlider(maxSlider.length, 5, true, 20000, {
+  } = useSlider(maxSlider.length, 5, true, 10000, {
     mobile: 2,
     tablet: 3,
     desktop: 5,

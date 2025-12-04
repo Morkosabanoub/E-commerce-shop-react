@@ -8,7 +8,7 @@ import './Dashedit.css'
 export default function Slider() {
   const { lang } = Reflang();
   const { text , loadingtext } = useChngtext();
-  const endpoint = `https://phones-shop-sever.onrender.com/api/translations/${lang}/slider`;
+  const endpoint = `https://phones-shop.onrender.com/api/translations/${lang}/slider`;
   const { dataList, loading, status, add, update, remove } = useData(endpoint);
   const [search, setSearch] = useState("");
   const [foundSlider, setFoundSlider] = useState(null);

@@ -8,16 +8,30 @@ export default function UsePhone() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(
-      `https://phones-shop-sever.onrender.com/api/translations/${lang}/phones`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setPhones(data);
-        setLoading(false);
-      })
 
-      .catch((err) => console.log(err));
+    const storageKey = `phonesData_${lang}`;
+    const cachedData = localStorage.getItem(storageKey);
+
+    if (cachedData) {
+      setPhones(JSON.parse(cachedData));
+      setLoading(false);
+    } else {
+      
+      fetch(
+        `https://phones-shop.onrender.com/api/translations/${lang}/phones`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setPhones(data);
+          setLoading(false);
+
+          localStorage.setItem(storageKey, JSON.stringify(data));
+        })
+        .catch((err) => {
+          console.log(err);
+          setLoading(false);
+        });
+    }
   }, [lang]);
 
   return { phones, loading };

@@ -8,9 +8,7 @@ export default function Landingpage() {
   return (
     <>
       <Navbar />
-      
-        <Slider />
-    
+      <Slider />
       <div id="main-outlet">
       <BrandsNav />
       </div >

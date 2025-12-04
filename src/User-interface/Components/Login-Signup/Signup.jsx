@@ -67,7 +67,7 @@ export default function Signup() {
 
     try {
       const res = await fetch(
-        `https://phones-shop-sever.onrender.com/api/general/users`,
+        `https://phones-shop.onrender.com/api/general/users`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

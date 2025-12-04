@@ -13,7 +13,7 @@ export default function ConnectForm() {
     const [company, setCompany] = useState(null);
   useEffect(() => {
       fetch(
-        `https://phones-shop-sever.onrender.com/api/translations/${lang}/company`
+        `https://phones-shop.onrender.com/api/translations/${lang}/company`
       )
         .then((res) => res.json())
         .then((data) => {

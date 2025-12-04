@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 export default function Profile() {
   const { text , loadingtext} = useChngtext();
-  const endpoint = "https://phones-shop-sever.onrender.com/api/general/users";
+  const endpoint = "https://phones-shop.onrender.com/api/general/users";
   const { dataList, loading, status, updatebyname, remove } = useData(endpoint);
   const { user } = UseAuth();
   const [founduser, setFoundUser] = useState({

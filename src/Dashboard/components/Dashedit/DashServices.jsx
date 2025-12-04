@@ -7,7 +7,7 @@ import "./Dashedit.css";
 
 export default function Services() {
   const { lang } = Reflang();
-  const endpoint = `https://phones-shop-sever.onrender.com/api/translations/${lang}/services`;
+  const endpoint = `https://phones-shop.onrender.com/api/translations/${lang}/services`;
   const { dataList, loading, status, add, update, remove } = useData(endpoint);
   const { text , loadingtext} = useChngtext();
   const [search, setSearch] = useState("");

@@ -16,7 +16,7 @@ i18n
     interpolation: { escapeValue: false },
     backend: {
       loadPath:
-        "https://phones-shop-sever.onrender.com/api/translations/{{lng}}/text",
+        "https://phones-shop.onrender.com/api/translations/{{lng}}/text",
     },
     react: { useSuspense: true },
   });

@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 export default function PhoneInfo({ phoneInfo }) {
   const { text , loadingtext } = useChngtext();
   const { currentIndex, goTo } = useSlider(phoneInfo.images, 1, 0);
-  const endpoint = `https://phones-shop-sever.onrender.com/api/general/users`;
+  const endpoint = `https://phones-shop.onrender.com/api/general/users`;
   const { dataList, status, updatebyname } = useData(endpoint);
   const { user } = UseAuth();
 

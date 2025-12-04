@@ -6,7 +6,7 @@ import UseAuth from "../../hooks/AuthContext";
 
 export default function Cart() {
     const { phones, loading } = usePhone();
-    const endpoint = `https://phones-shop-sever.onrender.com/api/general/users`;
+    const endpoint = `https://phones-shop.onrender.com/api/general/users`;
     const { text , loadingtext } = useChngtext();
     const { dataList } = useData(endpoint);
     const { user } = UseAuth();

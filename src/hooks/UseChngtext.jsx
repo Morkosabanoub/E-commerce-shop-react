@@ -14,7 +14,7 @@ export default function useChngtext() {
     }
 
     fetch(
-      `https://phones-shop-sever.onrender.com/api/translations/${lang}/text`
+      `https://phones-shop.onrender.com/api/translations/${lang}/text`
     )
       .then((res) => res.json())
       .then((data) => {

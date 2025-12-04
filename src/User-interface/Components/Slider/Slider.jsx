@@ -16,7 +16,7 @@ export default function Slider() {
 
   useEffect(() => {
     fetch(
-      `https://phones-shop-sever.onrender.com/api/translations/${lang}/slider`
+      `https://phones-shop.onrender.com/api/translations/${lang}/slider`
     )
       .then((res) => res.json())
       .then((data) => setslider(data))

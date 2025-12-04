@@ -36,7 +36,7 @@ export default function Navbar() {
     setCurrentLang(lang);
     setOpenLang(false);
   };
-  const endpoint = `https://phones-shop-sever.onrender.com/api/general/users`;
+  const endpoint = `https://phones-shop.onrender.com/api/general/users`;
   const { dataList } = useData(endpoint);
   const navbar = [
     { to: "/Phones", text: text.phones },

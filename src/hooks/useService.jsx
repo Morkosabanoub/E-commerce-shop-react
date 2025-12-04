@@ -12,7 +12,7 @@ export default function useService() {
   useEffect(() => {
     setLoading(true);
     fetch(
-      `https://phones-shop-sever.onrender.com/api/translations/${lang}/services`
+      `https://phones-shop.onrender.com/api/translations/${lang}/services`
     )
       .then((res) => {
         if (!res.ok) {

@@ -23,7 +23,7 @@ export default function Login() {
   const handeluser = async () => {
     try {
       const res = await fetch(
-        `https://phones-shop-sever.onrender.com/api/general/signin`,
+        `https://phones-shop.onrender.com/api/general/signin`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

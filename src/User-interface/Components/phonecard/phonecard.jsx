@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 
 export default function PhoneCard({ phoneCard }) {
   const { text , loadingtext } = useChngtext();
-  const endpoint = `https://phones-shop-sever.onrender.com/api/general/users`;
+  const endpoint = `https://phones-shop.onrender.com/api/general/users`;
   const { dataList, loading, updatebyname } = useData(endpoint);
   const finalPrice = phoneCard.price - phoneCard.discount;
   const discountPercent = Math.round(
