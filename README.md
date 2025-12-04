@@ -21,8 +21,8 @@ This project demonstrates front-end development best practices, including:
 - **JavaScript (ES6+)**
 - **HTML5**
 - **SASS (SCSS)**
+- **Node**
 
 ## 📦 Installation
-
+npm install
 npm run dev
-node server.js
