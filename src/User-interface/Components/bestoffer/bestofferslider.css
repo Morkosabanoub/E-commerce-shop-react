@@ -25,11 +25,14 @@
   }
 }
 @media (max-width: 768px) {
-  
+  .bestofferslider{
+    width: 100%;
+  }
   .grid-bestoffer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);    
     margin: 0 auto;
-    width: 98%;
+    width: 100%;
+    gap: 0;
   }
 }

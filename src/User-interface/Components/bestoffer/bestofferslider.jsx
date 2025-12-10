@@ -10,9 +10,7 @@ import UseChngtext from "../../../hooks/UseChngtext";
 
 export default function Bestofferslider() {
   const { text, loadingtext } = UseChngtext();
-
   const { phones, loading } = usePhone(0);
-
   const getPhones = Array.isArray(phones) ? phones : [];
   const phonesort = [...getPhones].sort((a, b) => b.discount - a.discount);
 
@@ -22,9 +20,9 @@ export default function Bestofferslider() {
     nextIndex,
     prevIndex,
     visiblecount,
-    handleTouchStart,
-    handleTouchMove,
-    handleTouchEnd,
+    // handleTouchStart,
+    // handleTouchMove,
+    // handleTouchEnd,
   } = useSlider(maxSlider.length, 5, true, 10000, {
     mobile: 2,
     tablet: 3,
@@ -47,9 +45,9 @@ export default function Bestofferslider() {
   return (
     <div
       className="bestofferslider"
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
+      // onTouchStart={handleTouchStart}
+      // onTouchMove={handleTouchMove}
+      // onTouchEnd={handleTouchEnd}
     >
       <h1>{text.bestOffer}</h1>
       <div>
