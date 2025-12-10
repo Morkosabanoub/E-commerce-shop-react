@@ -15,15 +15,6 @@
   margin: 0 auto;
 }
 
-.grid-service {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  /* gap: 10px; */
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
-  width: 96%;
-}
 
 .service-card:hover,
 .service-card:focus,
@@ -54,11 +45,6 @@
 
 @media(max-width:768px) {
   .service-card {
-    width: 100%;
-  }
-
-  .grid-service {
-    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-    gap: 20px;
+    width: 90%;
   }
 }

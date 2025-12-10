@@ -3,24 +3,33 @@
   position: relative;
   width: 96%;
   margin: 0 auto;
+  height: 650px;
 }
 
 .grid-bestoffer {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 10px;
-  margin: 0 auto;
+  margin: 2px auto; 
   justify-content: center;
   align-items: center;
   width: 96%;
 }
+@media(max-width: 1024px) {
 
-@media screen and (max-width: 768px) {
   .grid-bestoffer {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     margin: 0 auto;
-    width: 96%;
+    width: 98%;
+  }
+}
+@media (max-width: 768px) {
+  
+  .grid-bestoffer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);    
+    margin: 0 auto;
+    width: 98%;
   }
 }

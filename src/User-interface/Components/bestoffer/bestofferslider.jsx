@@ -30,11 +30,13 @@ export default function Bestofferslider() {
     tablet: 3,
     desktop: 5,
   });
+  const LoopData = [...maxSlider, ...maxSlider];
+  const Sliderslice = LoopData.slice(currentIndex, currentIndex + visiblecount);
 
-  const Sliderslice = maxSlider.slice(
-    currentIndex,
-    currentIndex + visiblecount
-  );
+  // const Sliderslice = maxSlider.slice(
+  //   currentIndex,
+  //   currentIndex + visiblecount
+  // );
 
   if (loading) return <div>{text.Loading}</div>;
     if (loadingtext) return <p>{text.loading}</p>;
@@ -54,7 +56,7 @@ export default function Bestofferslider() {
         {Sliderslice.length === 0 ? (
           <div>{text.noitems}</div>
         ) : (
-          <div className="grid">
+          <div className="grid-bestoffer">
             {Sliderslice.map((item) => (
               <div key={item.id}>
                 <PhoneCard phoneCard={item} />

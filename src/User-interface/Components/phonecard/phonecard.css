@@ -7,7 +7,7 @@
   display: block;
   width: 250px;
   padding: 10px;
-  height: 470px;
+  height: 450px;
   text-align: center;
   overflow: hidden;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
@@ -57,8 +57,8 @@
 
 .phonecard img {
   width: 100%;
-  height: 50%;
-  margin: 20px 0px;
+  height: 55%;
+  padding: 10px 0px;
   overflow: hidden;
 }
 
@@ -73,6 +73,7 @@
   flex-wrap: nowrap;
   text-transform: capitalize;
   margin-top: 10px;
+  height: 30%;
 }
 
 .phonecard-info span {
@@ -108,7 +109,7 @@
 @media (max-width: 767px) {
   .phonecard {
     width: 95%;
-    height: auto;
+    height: auto-fit;
   }
   .card-cart {
     left: 3%;

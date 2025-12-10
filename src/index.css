@@ -58,11 +58,11 @@ body[data-text-dir="ltr"] {
   color: var(--color-button-text);
   border: none;
   border-radius: var(--border-radius);
-  padding: 10px;
+  padding: 5px 10px;
   text-align: center;
   cursor: pointer;
   width: fit-content;
-  margin: 20px auto;
+  margin: 5px auto;
   text-decoration: none;
 
 }
@@ -79,6 +79,7 @@ h1 {
   display: block;
   text-align: center;
   padding: 10px 0px;
+  margin: 10px 0px;
 }
 
 .grid {
@@ -89,14 +90,21 @@ h1 {
   margin: 2px auto;
   height: fit-content;
 }
-
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
     margin: 2px auto;
   }
 }
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+    gap: 7px;
+    margin: 2px auto;
+  }
+}
+
 
 .slidernext,
 .sliderprve {
@@ -126,20 +134,17 @@ h1 {
 .sliderprve:hover {
   color: var(--color-primary-disabled);
 }
-
-.search {
+.search{
   width: 100%;
 }
-
 .search input {
-
-  width: 90%;
-  border: 2px solid var(--color-primary);
+  width: 100%;
+  border: 1px solid var(--color-primary);
   border-radius: 15px;
   text-align: center;
   outline: none;
   padding: 3px 0px;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3); */
 }
 
 

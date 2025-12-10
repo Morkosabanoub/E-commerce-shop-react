@@ -16,6 +16,7 @@
   /* box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3); */
   white-space: nowrap;
   padding: 0px 10px;
+  gap: 10px;
 
 }
 
@@ -23,7 +24,8 @@
   display: flex;
   width: 65%;
   height: 10vh;
-  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .logo {
@@ -36,11 +38,11 @@
 .logo img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .navbar {
-  width: 60%;
+  width: auto;
 
 }
 
@@ -140,7 +142,7 @@
 .navsearch {
   position: relative;
   display: flex;
-  width: 20%;
+  width: auto;
   align-items: center;
   margin-right: auto;
 }
@@ -159,13 +161,12 @@
 .search-icon {
   position: absolute;
   font-size: 20px;
-  top: 35%;
-  right: 87%;
-  left: 87%;
+  right: 5%;
+  left: 5%;
   color: var(--color-primary);
   animation: spin 2s linear infinite;
   cursor: pointer;
-  align-items: center;
+  
 }
 
 .lang {
@@ -174,7 +175,7 @@
   align-items: center;
   justify-content: center;
   order: 3;
-  margin-right: 10px;
+  /* margin-right: 10px; */
 
 }
 
@@ -183,8 +184,13 @@
   display: flex;
   font-size: 25px;
   border-radius: 5px;
-  background: #fff;
+  /* background: #fff; */
   width: 35px;
+  height: 35px;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  
 }
 
 .droplang {
@@ -216,7 +222,7 @@
 
 .usernav {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   width: 35%;
   margin-right: auto;
   gap: 10px;
@@ -321,7 +327,119 @@
   gap: 10px;
   margin: 0 auto;
 }
-
+@media (max-width: 1024px){
+  .main-content{
+    flex-direction: column;
+    height: auto;
+    
+  }
+  .navsection{
+    width: 100%;
+    height: 7vh;
+  }
+  .usernav{
+    width: 100%;
+    height: 4vh;
+  }
+    .logo {
+      order: 1;
+    }
+    .openNavbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      display: block;
+      font-size: 25px;
+      color: var(--color-primary);
+      z-index: 10000;
+      order: 1;
+  }
+    .navlinks {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      width: 50%;
+      background-color: var(--color-bg);
+      flex-direction: column;
+      justify-content: center;
+      transition: right 0.0s ease-in-out;
+      transition: left 0.0s ease-in-out;
+      z-index: 9999;
+      border-radius: 0px 20px 20px 0px;
+    }
+  
+    .dropnav-content {
+      top: 100%;
+      margin: 0 auto;
+      max-height: 50vh;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background-color: var(--color-bg);
+    }
+  
+    .dropnav.showdropnav {
+      display: block;
+      max-height: 50vh;
+    }
+  
+    .dropnav.hidedropnav {
+      display: none;
+      max-height: 0vh;
+    }
+  
+    .dropnav-content a {
+      width: 150px;
+      padding: 0px 5px;
+      margin: 10px 10px 10px 10px;
+      text-align: center;
+      font-size: small;
+      background-color: var(--color-primary);
+      color: white;
+  
+    }
+  
+    .navlinks.show-nav {
+      left: 0;
+      right: 0;
+    }
+  
+    .navlinks.hide-nav {
+      left: -100%;
+      right: -100%;
+    }
+  
+    .navlinks a,
+    .navlinks span {
+      width: 240px;
+      height: 40px;
+      padding: 0px 10px;
+      margin: 10px;
+      gap: 10px;
+      text-align: center;
+      background-color: var(--color-primary);
+      color: white;
+      line-height: 40px;
+      font-size: 20px;
+    }
+    .navbar {
+      width: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+    }
+    .search-icon{
+      left: 1%;
+      right: 1%;
+    }
+    .navsearch{
+      width: 80%;
+  }
+    
+}
 @media (max-width: 768px) {
   .main-content {
     width: 100%;
@@ -442,7 +560,8 @@
   }
 
   .search-icon {
-    top: 38%;
+    left: 5%;
+    right: 5%;
   }
 
   .usernav {
