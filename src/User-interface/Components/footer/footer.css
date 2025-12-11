@@ -85,7 +85,10 @@
 
 .social a {
   padding-right: 20px;
-  font-size: 30px;
+  font-size: 25px;
+}
+.social-icon{
+  color: var(--color-link);
 }
 
 .social a:hover,

@@ -67,19 +67,19 @@ export default function Footer() {
               href={company.facebook}
               target="_blank"
               rel="noopener noreferrer">
-              <FaFacebookF />
+              <FaFacebookF className="social-icon"/>
             </a>
             <a
               href={company.instagram}
               target="_blank"
               rel="noopener noreferrer">
-              <FaInstagram />
+              <FaInstagram className="social-icon"/>
             </a>
             <a
               href={company.twitter}
               target="_blank"
               rel="noopener noreferrer">
-              <FaSquareXTwitter />
+              <FaSquareXTwitter className="social-icon"/>
             </a>
           </div>
         </div>

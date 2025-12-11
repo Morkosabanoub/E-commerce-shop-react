@@ -1,10 +1,11 @@
+
 import { useState, useEffect } from "react";
 import Reflang from "../Helper/Reflang";
 
 export default function UsePhone() {
-  const [phones, setPhones] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const { lang } = Reflang();
+  const [phones, setPhones] = useState([]); 
+  const [loading, setLoading] = useState(true); 
+  const { lang } = Reflang(); 
 
   useEffect(() => {
     setLoading(true);
@@ -17,8 +18,13 @@ export default function UsePhone() {
     const maxAge = 2 * 60 * 60 * 1000; 
 
     if (cachedData && cacheTime && now - cacheTime < maxAge) {
-      setPhones(JSON.parse(cachedData));
-      setLoading(false);
+      try {
+        const parsed = JSON.parse(cachedData).filter((b) => b?.name); 
+        setPhones(parsed);
+      } catch {
+        localStorage.removeItem(storageKey);
+        localStorage.removeItem(cacheTimeKey);
+      }
     }
 
     fetch(`https://phones-shop.onrender.com/api/translations/${lang}/phones`)
@@ -27,11 +33,14 @@ export default function UsePhone() {
         return res.json();
       })
       .then((data) => {
-        setPhones(data);
-        localStorage.setItem(storageKey, JSON.stringify(data));
+        const validData = Array.isArray(data)
+          ? data.filter((b) => b?.name)
+          : [];
+        setPhones(validData);
+        localStorage.setItem(storageKey, JSON.stringify(validData));
         localStorage.setItem(cacheTimeKey, Date.now());
       })
-      .catch((err) => console.error("Fetch Error → ", err))
+      .catch((err) => console.error("Fetch Error →", err))
       .finally(() => setLoading(false));
   }, [lang]);
 
