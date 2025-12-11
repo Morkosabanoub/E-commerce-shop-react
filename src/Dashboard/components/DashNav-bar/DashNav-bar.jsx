@@ -43,6 +43,8 @@ export default function DashNavBar() {
                   <li key={b.id} o>
                     <Link
                       to={`/phone/${generateSlug(b.name)}`}
+                      target="_blank" 
+                      rel="noopener noreferrer" 
                       onClick={() => {
                         scrollToOutlet();
                         setSearch("");
@@ -61,8 +63,9 @@ export default function DashNavBar() {
       <div className="dashlang">
         <span className="dashcurrentlang">
           <span
-            className={`fi fi-${currentLang === "ar" ? "eg" : currentLang === "ua" ? "ua" : "sh"
-              }`}
+            className={`fi fi-${
+              currentLang === "ar" ? "eg" : currentLang === "ua" ? "ua" : "sh"
+            }`}
           ></span>
         </span>
         <div className="dashdroplang">

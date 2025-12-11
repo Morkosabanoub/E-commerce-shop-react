@@ -131,6 +131,8 @@ export default function Navbar() {
                     <li key={b.id}>
                       <Link
                         to={`/phone/${generateSlug(b.name)}`}
+                        target="_blank" 
+                        rel="noopener noreferrer"
                         onClick={() => {
                           scrollToOutlet();
                           setSearch("");
