@@ -23,9 +23,8 @@
 .dashsearch-icon {
   position: absolute;
   font-size: 20px;
-  top: 30%;
-  left: 85%;
-  right: 85%;
+  left: 1%;
+  right: 1%;
   color: var(--color-primary);
   animation: spin 2s linear infinite;
   cursor: pointer;
